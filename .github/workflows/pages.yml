@@ -12,7 +12,7 @@ jobs:
     name: Publish to Cloudflare Pages
     steps:
       - name: Comment deploy start
-        if: github.event_name != 'push'
+        if: github.event.action == 'opened'
         uses: mshick/add-pr-comment@v2
         with:
           message-id: cloudflare-deploy
